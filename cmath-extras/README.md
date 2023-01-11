@@ -7,16 +7,16 @@ What would you do if you were told to use Python to calculate the magnitude and 
 
 While it's not *hard* doing calculations like these, they do have the potencial of getting quite messy within a script. Especially when working with bigger circuits.
 
-As we know, the voltage over an RLC branch can be calculated from the following equation:
+As we know, the voltage over a RLC branch can be found using the following equation:
 
 $$ {{V} = ({R}+{j(X_{L}-X_{C})})*{I}\angle\phi\degree} $$
 
-With the `cmath-extras` module installed, the voltage can be calculated using an [one and only function](#cnum):
+With the `cmath-extras` module installed, calculations with complex numbers can be done easily using an [one and only function](#cnum):
 ```
 from cmath_extras import *
 
 V = cnum(R+(XL-XC)j)*cnum(I, phi)   # cnum() takes care of the complex conversion.
-polprint(V, 2)                      # While polprint() outputs the result in a pretty manner.
+polprint(V, 2)                      # While polprint() outputs the result in a pretty manner (here with 2 decimals).
 ```
 The code above could output something like this if all parameters was defined:
 ```
@@ -25,7 +25,7 @@ The code above could output something like this if all parameters was defined:
 
 
 ## Installation
-The package can be installed using pip:
+The package can be installed using [pip](https://pip.pypa.io/en/stable/installation/#). However, since this project is not yet hosted at [PyPI](https://pypi.org/), *[git](https://git-scm.com/download) is also required for the installation*.
 ```
 $ pip3 install 'git+https://github.com/mariusenglund/python-math-library.git#egg=cmath-extras&subdirectory=cmath-extras'
 ```
